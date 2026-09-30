@@ -1,356 +1,723 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Karelle Alezra — Full-Stack Software Engineer building modern web, AI-native, data-driven and secure applications." />
+  <meta name="theme-color" content="#18181b" />
+  <title>Karelle Alezra | Full-Stack Software Engineer</title>
 
-  <title>Karelle Alezra Resume</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <link rel="icon" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+          colors: {
+            ink: '#18181b',
+            accent: '#d946ef',
+            paper: '#f8f7fa'
+          },
+          boxShadow: {
+            soft: '0 24px 70px rgba(24,24,27,.10)',
+            glow: '0 18px 60px rgba(217,70,239,.18)'
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-
+  <style>
+    ::selection { background:#d946ef; color:#fff; }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(24,24,27,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(24,24,27,.035) 1px, transparent 1px);
+      background-size: 46px 46px;
+    }
+    .dark-grid {
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 46px 46px;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .tech-chip {
+      display:inline-flex;
+      align-items:center;
+      border:1px solid rgb(228 228 231);
+      border-radius:9999px;
+      background:#fff;
+      padding:.48rem .78rem;
+      font-size:.75rem;
+      font-weight:700;
+      color:rgb(63 63 70);
+      box-shadow:0 4px 18px rgba(24,24,27,.04);
+    }
+    .tech-chip-dark {
+      display:inline-flex;
+      align-items:center;
+      border:1px solid rgba(255,255,255,.11);
+      border-radius:9999px;
+      background:rgba(255,255,255,.045);
+      padding:.48rem .78rem;
+      font-size:.75rem;
+      font-weight:700;
+      color:rgb(228 228 231);
+    }
+  </style>
 </head>
 
-<body>
+<body class="bg-white font-sans text-zinc-800 antialiased">
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <!-- NAV -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-zinc-200/80 bg-white/90 backdrop-blur-xl">
+    <nav class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-6 lg:px-8" aria-label="Primary navigation">
+      <a href="#home" class="flex items-center" aria-label="KA Consulting — Home">
+        <img src="assets/img/ka-logo-header.png" alt="KA Consulting" class="h-9 w-auto sm:h-10" />
+      </a>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Karelle Alezra</a></h1>
-        <div class="social-links mt-3 text-center">
-         <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
-          <a href="https://www.linkedin.com/in/karelle-alezra-6211a1254/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
+      <div class="hidden items-center gap-7 text-sm font-semibold text-zinc-500 md:flex">
+        <a class="transition hover:text-fuchsia-600" href="#expertise">Expertise</a>
+        <a class="transition hover:text-fuchsia-600" href="#stack">Technology</a>
+        <a class="transition hover:text-fuchsia-600" href="#projects">Projects</a>
+        <a class="transition hover:text-fuchsia-600" href="#experience">Experience</a>
+        <a class="transition hover:text-fuchsia-600" href="#contact">Contact</a>
       </div>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-		  <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Skills</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+      <a href="mailto:karellealezra@gmail.com"
+         class="hidden rounded-full bg-zinc-950 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-fuchsia-600 sm:inline-flex">
+        Let's talk
+      </a>
+
+      <button id="menuBtn" class="rounded-lg p-2 text-zinc-700 md:hidden" aria-label="Open menu" aria-expanded="false">☰</button>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-zinc-200 bg-white px-6 py-5 md:hidden">
+      <div class="flex flex-col gap-4 text-sm font-semibold text-zinc-700">
+        <a href="#expertise">Expertise</a>
+        <a href="#stack">Technology</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </header><!-- End Header -->
+  </header>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Karelle Alezra</h1>
-      <p>I'm a <span class="typed" data-typed-items="Software Engineer, Full Stack Web Developer, Database Developer, QA Automation Engineer"></span></p>
-    </div>
-  </section><!-- End Hero -->
+  <main>
+    <!-- HERO -->
+    <section id="home" class="relative overflow-hidden bg-paper pt-[72px]">
+      <div class="pointer-events-none absolute inset-0 grid-bg"></div>
+      <div class="pointer-events-none absolute -right-40 top-16 h-[34rem] w-[34rem] rounded-full bg-fuchsia-300/25 blur-[120px]"></div>
+      <div class="pointer-events-none absolute -left-40 bottom-0 h-[26rem] w-[26rem] rounded-full bg-violet-200/30 blur-[120px]"></div>
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-         
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Software Engineer</h3>
-           
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Profession:</strong> <span>Software Engineer</span></li>
-				  <li><i class="bi bi-chevron-right"></i> <strong>Domain Expertise:</strong> 
-				  <span>Full Stack Web Development, DB Development, QA Automation</span></li>
-                  
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email</strong> <span>karellealezra@gmail.com</span></li>
-				  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+972 053 708 0449</span></li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-   
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">HTML / CSS / JavaScript / AJAX / Bootstrap /JQuery <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Java<i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Android<i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-			
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">PHP<i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Python<i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Django<i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-		    <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">SQL<i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Linux<i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Microsoft Server<i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-		  <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">MySql / Oracle SQL-PLSQL / SQLServer / SQlite / FireBase<i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">C/C++<i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Selenium Automation<i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Skills Section -->
-
-     <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Karelle Alezra</h4>
-			  <p><em>Software Engineer, Full Stack Web Developer, Database Developer & QA Automation Engineer</em></p>
-              <ul>
-                <li>32 kinnor Ashdod, Israel</li>
-                <li>(+972)053 708 0449</li>
-                <li>karellealezra@gmail.com</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4> Master of Engineering degree </h4>
-              <h5>1997-1998</h5>
-              <p><em>EPF Engineering School, France</em></p>
-              <p> Computer Science and Engineering with a specialization in Information and Communication Technology</p>
-            </div>
-            <div class="resume-item">
-              <h4>Bachelor of Science in Engineering degree</h4>
-              <h5>1993 - 1996</h5>
-              <p><em>EPF Engineering School, France</em></p>
-              <p>Computer Science and Engineering</p>
-            </div>
-            <div class="resume-item">
-              <h4> Specialization Courses & Certifications </h4>
-				<ul>
-					<li><h5>2022</h5>QA Automation courses</li>
-					<li><h5>2019</h5>Allot Secure Network Certification</li>
-					<li><h5>2017</h5>Linux Certification</li>
-					<li><h5>2017</h5>Cisco CCNA Certification and Microsoft Server Certification</li>
-					<!--<li><h5>2017</h5>Cisco CCNA Switching and Routing Certification</li>
-					<li><h5>2017</h5>Microsoft MCSA 70-140 Server Certification</li>
-					<li><h5>2016-2017</h5>Technion Cyber Course </li>
-					<li><h5>2006</h5>AFNOR Lean-Six Sygma Quality Management Course & Certification</li>
-					<li><h5>2002</h5>Hermann France Communication Course</li>
-					<li><h5>2000</h5>ALTRAN France Project management Course</li>-->
-					<li><h5>1999</h5>Crossworld Berlin EAI / ETL Course</li>
-				</ul>
+      <div class="relative mx-auto grid min-h-[calc(100vh-72px)] max-w-7xl items-center gap-14 px-6 py-20 lg:grid-cols-[1.18fr_.82fr] lg:px-8">
+        <div>
+			<div class="mb-7 inline-flex items-center gap-2.5 rounded-full border border-fuchsia-200 bg-white px-5 py-2.5 text-sm font-extrabold uppercase tracking-[.14em] text-zinc-700 shadow-sm">
+			  <span class="h-2.5 w-2.5 rounded-full bg-fuchsia-500"></span>
+			  Web & Applications · Data & AI · Project Management
 			</div>
-		  </div>
-          <div class="col-lg-6">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Developer, Secure and Management Network Engineer</h4>
-              <h5>2017 - 2019</h5>
-              <p><em>Bynet IT, TLV, Israel</em></p>
-              <ul>
-				<li>Development of Django-Python and PHP Web Applications</li>
-                <li>Installation and Configuration of Secure and Management Network Application</li>
-                <li>Installation of Network Devices</li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Projects Leader</h4>
-              <h5>2007 - 2014</h5>
-              <p><em>Mutuelle Nationale Territoriale, Paris, France</em></p>
-              <ul>
-				<li>Management in the design, development, and implementation of Applications</li>
-                <li>Tender management for ERP applications CRM, BI and PPM </li>
-              </ul>
-            </div>
-			<div class="resume-item">
-              <h4>Developer, Projects Leader</h4>
-              <h5>1999-2007</h5>
-              <p><em>Altran Consulting for Orange France, Paris, France</em></p>
-              <ul>
-				<li>Development of Applications</li>
-                <li>C, Java, VB, BO, Crossworld</li>
-				<li>Unix, Oracle SQL/PL SQL</li>
-              </ul>
-            </div>
-			<div class="resume-item">
-              <h4>Developer</h4>
-              <h5>1998</h5>
-              <p><em>Alcatel-Lucent, Velizy, France</em></p>
-              <ul>
-				<li>Development of Applications </li>
-                <li>Unix, Oracle SQL/PL SQL, C, Paradox, PowerBuilder</li>
-              </ul>
-            </div>
+
+          <p class="mb-3 text-sm font-extrabold uppercase tracking-[.28em] text-fuchsia-600">Karelle Alezra</p>
+
+		<h1 class="max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-[-.04em] text-zinc-950 sm:text-5xl lg:text-[3.5rem] xl:text-[3.8rem]">
+		  Full-Stack
+		  <span class="bg-gradient-to-r from-fuchsia-600 via-violet-600 to-indigo-500 bg-clip-text text-transparent">
+			Software Engineer
+		  </span>
+		</h1>
+
+          <p class="mt-6 max-w-3xl text-xl font-semibold leading-8 text-zinc-800">
+            Building Web, Data &amp; AI applications, combining software engineering,
+            project management and end-to-end delivery.
+          </p>
+
+          <p class="mt-4 max-w-2xl text-base leading-7 text-zinc-600">
+            Frontend, backend, APIs, databases, real-time communication, security, testing and deployment,
+            supported by extensive experience in Project &amp; Program Management.
+          </p>
+
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#projects" class="rounded-full bg-zinc-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-fuchsia-600">
+              Explore my work →
+            </a>
+            <a href="https://www.linkedin.com/in/karelle-alezra-6211a1254/" target="_blank" rel="noreferrer"
+               class="rounded-full border border-zinc-300 bg-white px-6 py-3 text-sm font-bold text-zinc-800 transition hover:border-fuchsia-300 hover:text-fuchsia-700">
+              LinkedIn ↗
+            </a>
+            <a href="https://github.com/karellealezra" target="_blank" rel="noreferrer"
+               class="rounded-full border border-zinc-300 bg-white px-6 py-3 text-sm font-bold text-zinc-800 transition hover:border-fuchsia-300 hover:text-fuchsia-700">
+              GitHub ↗
+            </a>
+          </div>
+
+          <div class="mt-10 flex max-w-3xl flex-wrap gap-2">
+            <span class="tech-chip">React</span>
+            <span class="tech-chip">TypeScript</span>
+            <span class="tech-chip">Node.js</span>
+            <span class="tech-chip">Python</span>
+            <span class="tech-chip">Django</span>
+            <span class="tech-chip">FastAPI</span>
+            <span class="tech-chip">MongoDB</span>
+            <span class="tech-chip">SQL</span>
+            <span class="tech-chip">Generative AI</span>
+            <span class="tech-chip">Socket.IO</span>
           </div>
         </div>
 
+        <div class="relative mx-auto w-full max-w-md lg:ml-auto">
+          <div class="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-fuchsia-400/30 via-violet-300/20 to-transparent blur-2xl"></div>
+          <div class="relative overflow-hidden rounded-[2rem] border border-white bg-white p-2 shadow-soft">
+            <img src="assets/img/profile-img.jpg" alt="Karelle Alezra"
+                 class="aspect-[4/5] w-full rounded-[1.55rem] object-cover object-center" />
+          </div>
+          <div class="absolute -bottom-6 -left-5 hidden rounded-2xl border border-zinc-200 bg-white/95 p-4 shadow-xl backdrop-blur sm:block">
+            <div class="text-xs font-bold uppercase tracking-[.18em] text-zinc-400">Remote collaboration</div>
+            <div class="mt-1 text-base font-bold text-zinc-900">France · International</div>
+          </div>
+        </div>
       </div>
-    </section><!-- End Resume Section -->
+    </section>
 
-   
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    <!-- ABOUT / EXPERTISE -->
+    <section id="expertise" class="mx-auto max-w-7xl px-6 py-28 lg:px-8">
+      <div class="reveal grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-end">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[.25em] text-fuchsia-600">Engineering profile</p>
+          <h2 class="mt-4 text-4xl font-black tracking-tight text-zinc-950 sm:text-5xl">
+            Software Engineering, Data & AI, and Project Delivery.
+          </h2>
+        </div>
+        <p class="max-w-2xl text-lg leading-8 text-zinc-600">
+          My work combines hands-on software development with data and AI, secure application design,
+          quality practices and end-to-end project delivery. My earlier Project &amp; Program Management
+          experience covers requirements, planning, team leadership, governance, risk, vendors, QA/UAT and production deployment.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-5 md:grid-cols-2">
+        <article class="reveal rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+          <div class="text-xs font-black text-fuchsia-600">01 / ENGINEERING</div>
+          <h3 class="mt-5 text-2xl font-black text-zinc-950">Full-Stack Software Engineering</h3>
+          <p class="mt-4 leading-7 text-zinc-600">
+            Modern responsive frontends, backend services, REST APIs, data persistence, authentication,
+            authorization, real-time communication, testing and deployment.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tech-chip">React</span><span class="tech-chip">TypeScript</span>
+            <span class="tech-chip">Redux Toolkit</span><span class="tech-chip">Tailwind CSS</span>
+            <span class="tech-chip">Node.js</span><span class="tech-chip">Express</span>
+            <span class="tech-chip">Django</span><span class="tech-chip">FastAPI</span>
+          </div>
+        </article>
+
+        <article class="reveal rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+          <div class="text-xs font-black text-fuchsia-600">02 / INTELLIGENCE</div>
+          <h3 class="mt-5 text-2xl font-black text-zinc-950">Data & Artificial Intelligence</h3>
+          <p class="mt-4 leading-7 text-zinc-600">
+            Data analysis, Machine Learning and AI-native applications integrating LLMs, AI APIs,
+            agents, orchestration and computer-vision workflows.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tech-chip">Pandas</span><span class="tech-chip">NumPy</span>
+            <span class="tech-chip">scikit-learn</span><span class="tech-chip">LLMs</span>
+            <span class="tech-chip">LangChain</span><span class="tech-chip">LangGraph</span>
+            <span class="tech-chip">OpenCV</span><span class="tech-chip">MediaPipe</span>
+          </div>
+        </article>
+
+        <article class="reveal rounded-3xl border border-zinc-200 bg-zinc-950 p-8 text-white shadow-soft transition hover:-translate-y-1 hover:shadow-glow">
+          <div class="text-xs font-black text-fuchsia-400">03 / SECURITY</div>
+          <h3 class="mt-5 text-2xl font-black">Secure Software Engineering</h3>
+          <p class="mt-4 leading-7 text-zinc-400">
+            Security integrated into application design through protected APIs, authentication,
+            authorization, RBAC, validation, rate limiting, security headers and secure configuration.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="tech-chip-dark">JWT</span><span class="tech-chip-dark">RBAC</span>
+            <span class="tech-chip-dark">Validation</span><span class="tech-chip-dark">Rate Limiting</span>
+            <span class="tech-chip-dark">CORS</span><span class="tech-chip-dark">Helmet</span>
+          </div>
+        </article>
+
+        <article class="reveal rounded-3xl border border-fuchsia-100 bg-fuchsia-50/70 p-8 transition hover:-translate-y-1 hover:shadow-soft">
+          <div class="text-xs font-black text-fuchsia-700">04 / DELIVERY</div>
+          <h3 class="mt-5 text-2xl font-black text-zinc-950">Project & Program Management</h3>
+          <p class="mt-4 leading-7 text-zinc-600">
+            More than 15 years leading complex IT projects, transformation programs and cross-functional teams across requirements, scope, planning, governance, risk, quality, vendors, QA/UAT, deployment and production.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-2">
+		  <span class="tech-chip">Project Management</span>
+            <span class="tech-chip">Program Management</span><span class="tech-chip">Team Leadership</span><span class="tech-chip">PPM</span>
+            <span class="tech-chip">IT Governance</span><span class="tech-chip">Risk</span><span class="tech-chip">RFP</span>
+            <span class="tech-chip">QA / UAT</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY STACK -->
+    <section id="stack" class="relative overflow-hidden bg-zinc-950 text-white">
+      <div class="pointer-events-none absolute inset-0 dark-grid"></div>
+      <div class="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-fuchsia-600/15 blur-[120px]"></div>
+
+      <div class="relative mx-auto max-w-7xl px-6 py-28 lg:px-8">
+        <div class="reveal max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-[.25em] text-fuchsia-400">Technology stack</p>
+          <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
+            Technologies used across my software, data and AI work.
+          </h2>
+          <p class="mt-5 text-lg leading-8 text-zinc-400">
+            A broad engineering stack across modern web development, Python ecosystems, databases,
+            real-time systems, AI and secure software delivery.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div class="reveal rounded-3xl border border-white/10 bg-white/[.045] p-7">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-400">Frontend</p>
+            <h3 class="mt-3 text-xl font-black">Web interfaces</h3>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip-dark">React</span><span class="tech-chip-dark">TypeScript</span>
+              <span class="tech-chip-dark">JavaScript</span><span class="tech-chip-dark">Redux Toolkit</span>
+              <span class="tech-chip-dark">Tailwind CSS</span><span class="tech-chip-dark">HTML5</span>
+              <span class="tech-chip-dark">CSS3</span><span class="tech-chip-dark">Vite</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-white/10 bg-white/[.045] p-7">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-400">Backend</p>
+            <h3 class="mt-3 text-xl font-black">Services & APIs</h3>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip-dark">Node.js</span><span class="tech-chip-dark">Express.js</span>
+              <span class="tech-chip-dark">Python</span><span class="tech-chip-dark">Django</span>
+              <span class="tech-chip-dark">Django REST Framework</span><span class="tech-chip-dark">FastAPI</span>
+              <span class="tech-chip-dark">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-white/10 bg-white/[.045] p-7">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-400">Data</p>
+            <h3 class="mt-3 text-xl font-black">Databases & persistence</h3>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip-dark">MongoDB</span><span class="tech-chip-dark">Mongoose</span>
+              <span class="tech-chip-dark">SQL</span><span class="tech-chip-dark">MySQL</span>
+              <span class="tech-chip-dark">Oracle Database</span><span class="tech-chip-dark">PL/SQL</span><span class="tech-chip-dark">Elasticsearch</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-white/10 bg-white/[.045] p-7">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-400">AI & ML</p>
+            <h3 class="mt-3 text-xl font-black">Intelligent applications</h3>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip-dark">Generative AI</span><span class="tech-chip-dark">LLMs</span>
+              <span class="tech-chip-dark">AI Agents</span><span class="tech-chip-dark">LangChain</span>
+              <span class="tech-chip-dark">LangGraph</span><span class="tech-chip-dark">scikit-learn</span>
+              <span class="tech-chip-dark">Pandas</span><span class="tech-chip-dark">NumPy</span>
+              <span class="tech-chip-dark">OpenCV</span><span class="tech-chip-dark">MediaPipe</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-white/10 bg-white/[.045] p-7">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-400">Realtime & Security</p>
+            <h3 class="mt-3 text-xl font-black">Connected & protected systems</h3>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip-dark">WebSocket</span><span class="tech-chip-dark">Socket.IO</span>
+              <span class="tech-chip-dark">JWT</span><span class="tech-chip-dark">RBAC</span>
+              <span class="tech-chip-dark">Authentication</span><span class="tech-chip-dark">Authorization</span>
+              <span class="tech-chip-dark">API Security</span>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl border border-white/10 bg-white/[.045] p-7">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-400">Engineering</p>
+            <h3 class="mt-3 text-xl font-black">Workflow & foundations</h3>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip-dark">Git</span><span class="tech-chip-dark">GitHub</span>
+              <span class="tech-chip-dark">Testing</span><span class="tech-chip-dark">C</span>
+              <span class="tech-chip-dark">PowerBuilder</span><span class="tech-chip-dark">Paradox</span>
+              <span class="tech-chip-dark">Telecommunications</span><span class="tech-chip-dark">Networking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="bg-paper">
+      <div class="mx-auto max-w-7xl px-6 py-28 lg:px-8">
+        <div class="reveal flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+          <div class="max-w-3xl">
+            <p class="text-sm font-bold uppercase tracking-[.25em] text-fuchsia-600">Selected projects</p>
+            <h2 class="mt-4 text-4xl font-black tracking-tight text-zinc-950 sm:text-5xl">
+              Projects across software, data, AI and delivery.
+            </h2>
+          </div>
+          <p class="max-w-md text-sm leading-6 text-zinc-500">
+            A selection of applications and case studies covering full-stack development, AI,
+            data analysis, mobile development, QA automation and project management.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-6 lg:grid-cols-2">
+
+          <article class="reveal flex flex-col rounded-[2rem] border border-zinc-200 bg-white p-8 shadow-sm">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-600">AI-NATIVE APPLICATION</p>
+            <h3 class="mt-4 text-2xl font-black text-zinc-950">Generative AI Application Platform</h3>
+            <p class="mt-4 leading-7 text-zinc-600">
+              Application architecture integrating LLM services, AI agents, APIs and orchestrated workflows.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip">Python</span><span class="tech-chip">FastAPI</span>
+              <span class="tech-chip">LLMs</span><span class="tech-chip">AI Agents</span>
+              <span class="tech-chip">LangChain</span><span class="tech-chip">LangGraph</span>
+            </div>
+            <div class="mt-auto flex flex-wrap gap-3 pt-8">
+              <button disabled class="cursor-not-allowed rounded-full border border-zinc-200 bg-zinc-100 px-5 py-2.5 text-sm font-bold text-zinc-400">Explore Project</button>
+              <button disabled class="cursor-not-allowed rounded-full border border-zinc-200 bg-white px-5 py-2.5 text-sm font-bold text-zinc-400">Live Demo · Soon</button>
+            </div>
+          </article>
+
+          <article class="reveal flex flex-col rounded-[2rem] border border-zinc-200 bg-zinc-950 p-8 text-white shadow-sm">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-400">REAL-TIME FULL STACK</p>
+            <h3 class="mt-4 text-2xl font-black">Secure Real-Time Communication Platform</h3>
+            <p class="mt-4 leading-7 text-zinc-400">
+              Full-stack communication platform with authenticated users, group conversations and scoped real-time messaging.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip-dark">React</span><span class="tech-chip-dark">JavaScript</span>
+              <span class="tech-chip-dark">Node.js</span><span class="tech-chip-dark">Express</span>
+              <span class="tech-chip-dark">Socket.IO</span><span class="tech-chip-dark">MongoDB</span>
+              <span class="tech-chip-dark">JWT</span>
+            </div>
+            <div class="mt-auto flex flex-wrap gap-3 pt-8">
+              <button disabled class="cursor-not-allowed rounded-full border border-white/10 bg-white/10 px-5 py-2.5 text-sm font-bold text-zinc-500">Explore Project</button>
+              <button disabled class="cursor-not-allowed rounded-full border border-white/10 px-5 py-2.5 text-sm font-bold text-zinc-500">Live Demo · Soon</button>
+            </div>
+          </article>
+
+          <article class="reveal flex flex-col rounded-[2rem] border border-zinc-200 bg-white p-8 shadow-sm">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-600">MACHINE LEARNING</p>
+            <h3 class="mt-4 text-2xl font-black text-zinc-950">Real-Time Computer Vision Classification</h3>
+            <p class="mt-4 leading-7 text-zinc-600">
+              Real-time classification pipeline combining computer vision, feature extraction and trained Machine Learning models.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip">Python</span><span class="tech-chip">MediaPipe</span>
+              <span class="tech-chip">scikit-learn</span><span class="tech-chip">Random Forest</span>
+              <span class="tech-chip">Computer Vision</span>
+            </div>
+            <div class="mt-auto flex flex-wrap gap-3 pt-8">
+              <button disabled class="cursor-not-allowed rounded-full border border-zinc-200 bg-zinc-100 px-5 py-2.5 text-sm font-bold text-zinc-400">Explore Project</button>
+              <button disabled class="cursor-not-allowed rounded-full border border-zinc-200 bg-white px-5 py-2.5 text-sm font-bold text-zinc-400">Live Demo · Soon</button>
+            </div>
+          </article>
+
+          <article class="reveal flex flex-col rounded-[2rem] border border-fuchsia-100 bg-fuchsia-50/60 p-8">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-700">PROJECT & PROGRAM MANAGEMENT</p>
+            <h3 class="mt-4 text-2xl font-black text-zinc-950">Project Delivery & Governance Platform</h3>
+            <p class="mt-4 leading-7 text-zinc-600">
+              Interactive project management platform presenting progress, roadmap, Gantt planning, milestones, team organization and workload, risks, strategic decisions, governance and delivery status.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip">Project Management</span><span class="tech-chip">Program Management</span>
+              <span class="tech-chip">Roadmap</span><span class="tech-chip">Gantt</span>
+              <span class="tech-chip">Risk Management</span><span class="tech-chip">Governance</span>
+              <span class="tech-chip">React</span><span class="tech-chip">TypeScript</span>
+            </div>
+            <div class="mt-auto flex flex-wrap gap-3 pt-8">
+              <button disabled class="cursor-not-allowed rounded-full border border-fuchsia-100 bg-white/70 px-5 py-2.5 text-sm font-bold text-zinc-400">Explore Project</button>
+              <button disabled class="cursor-not-allowed rounded-full border border-fuchsia-100 bg-white/40 px-5 py-2.5 text-sm font-bold text-zinc-400">Live Demo · Soon</button>
+            </div>
+          </article>
+
+          <article class="reveal flex flex-col rounded-[2rem] border border-zinc-200 bg-white p-8 shadow-sm">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-600">QA AUTOMATION</p>
+            <h3 class="mt-4 text-2xl font-black text-zinc-950">Full-Stack Automated Testing Suite</h3>
+            <p class="mt-4 leading-7 text-zinc-600">
+              Automated quality workflow covering API, user-interface and end-to-end testing,
+              regression scenarios and continuous validation.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip">Test Automation</span><span class="tech-chip">API Testing</span>
+              <span class="tech-chip">E2E Testing</span><span class="tech-chip">Regression Testing</span>
+              <span class="tech-chip">CI</span>
+            </div>
+            <div class="mt-auto flex flex-wrap gap-3 pt-8">
+              <button disabled class="cursor-not-allowed rounded-full border border-zinc-200 bg-zinc-100 px-5 py-2.5 text-sm font-bold text-zinc-400">Explore Project</button>
+              <button disabled class="cursor-not-allowed rounded-full border border-zinc-200 bg-white px-5 py-2.5 text-sm font-bold text-zinc-400">Live Demo · Soon</button>
+            </div>
+          </article>
+
+          <article class="reveal flex flex-col rounded-[2rem] border border-zinc-200 bg-white p-8 shadow-sm">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-600">MOBILE APPLICATION</p>
+            <h3 class="mt-4 text-2xl font-black text-zinc-950">React Native Mobile Application</h3>
+            <p class="mt-4 leading-7 text-zinc-600">
+              Mobile application connected to a secure backend API with authentication,
+              application state management and persistent data.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="tech-chip">React Native</span><span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">REST API</span><span class="tech-chip">Authentication</span>
+              <span class="tech-chip">Node.js</span>
+            </div>
+            <div class="mt-auto flex flex-wrap gap-3 pt-8">
+              <button disabled class="cursor-not-allowed rounded-full border border-zinc-200 bg-zinc-100 px-5 py-2.5 text-sm font-bold text-zinc-400">Explore Project</button>
+              <button disabled class="cursor-not-allowed rounded-full border border-zinc-200 bg-white px-5 py-2.5 text-sm font-bold text-zinc-400">Live Demo · Soon</button>
+            </div>
+          </article>
+
+          <article class="reveal flex flex-col rounded-[2rem] border border-zinc-200 bg-white p-8 shadow-sm lg:col-span-2">
+            <div class="grid gap-8 lg:grid-cols-[1fr_.9fr] lg:items-center">
+              <div>
+                <p class="text-xs font-black uppercase tracking-[.18em] text-fuchsia-600">DATA & ANALYTICS</p>
+                <h3 class="mt-4 text-2xl font-black text-zinc-950">Search & Data Analytics Platform</h3>
+                <p class="mt-4 max-w-2xl leading-7 text-zinc-600">
+                  Data processing and analytics application combining Python data workflows,
+                  Elasticsearch indexing, search and aggregations, API services and a web dashboard.
+                </p>
+              </div>
+              <div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="tech-chip">Python</span><span class="tech-chip">Pandas</span>
+                  <span class="tech-chip">NumPy</span><span class="tech-chip">Elasticsearch</span>
+                  <span class="tech-chip">FastAPI</span><span class="tech-chip">React</span>
+                  <span class="tech-chip">TypeScript</span><span class="tech-chip">Data Visualization</span>
+                </div>
+                <div class="mt-7 flex flex-wrap gap-3">
+                  <button disabled class="cursor-not-allowed rounded-full border border-zinc-200 bg-zinc-100 px-5 py-2.5 text-sm font-bold text-zinc-400">Explore Project</button>
+                  <button disabled class="cursor-not-allowed rounded-full border border-zinc-200 bg-white px-5 py-2.5 text-sm font-bold text-zinc-400">Live Demo · Soon</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="mx-auto max-w-7xl px-6 py-28 lg:px-8">
+      <div class="reveal max-w-3xl">
+        <p class="text-sm font-bold uppercase tracking-[.25em] text-fuchsia-600">Experience</p>
+        <h2 class="mt-4 text-4xl font-black tracking-tight text-zinc-950 sm:text-5xl">
+          Software Engineering & Project Leadership.
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-zinc-600">
+          I started in software development, moved into large-scale IT delivery and strategic transformation,
+          and later returned to hands-on engineering with a much broader systems and delivery perspective.
+        </p>
+      </div>
+
+      <div class="mt-14 grid gap-6">
+        <article class="reveal rounded-3xl border border-fuchsia-200 bg-fuchsia-50/60 p-8 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8">
+          <div>
+            <p class="text-sm font-black text-fuchsia-700">2022 — Present</p>
+            <p class="mt-2 text-sm font-semibold text-zinc-500">KA Consulting</p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-black text-zinc-950">Founder & Full-Stack Software Engineer</h3>
+            <p class="mt-4 leading-7 text-zinc-600">
+              Design and development of end-to-end web and AI-native applications across frontend architecture,
+              backend services, REST APIs, databases, authentication, authorization, real-time communication,
+              secure-by-design practices, testing and deployment.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="tech-chip">React</span><span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">Node.js</span><span class="tech-chip">Express</span>
+              <span class="tech-chip">Python</span><span class="tech-chip">Django</span>
+              <span class="tech-chip">FastAPI</span><span class="tech-chip">MongoDB</span>
+              <span class="tech-chip">AI / ML</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal rounded-3xl border border-zinc-200 bg-white p-8 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8">
+          <div>
+            <p class="text-sm font-black text-zinc-500">2017 — 2019</p>
+            <p class="mt-2 text-sm font-semibold text-zinc-500">Bynet Data Communications</p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-black text-zinc-950">Software Developer & Network Engineer</h3>
+            <p class="mt-4 leading-7 text-zinc-600">
+              Developed full-stack web applications using Python/Django and built a Django-based network-management
+              application enabling remote administration of network equipment. Also contributed to network visibility,
+              traffic management, resilience and security solutions.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="tech-chip">Python</span><span class="tech-chip">Django</span>
+              <span class="tech-chip">JavaScript</span><span class="tech-chip">jQuery</span>
+              <span class="tech-chip">Bootstrap</span><span class="tech-chip">Gigamon</span>
+              <span class="tech-chip">Radware</span><span class="tech-chip">Allot</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="reveal rounded-3xl border border-zinc-200 bg-white p-8 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8">
+          <div>
+            <p class="text-sm font-black text-zinc-500">2007 — 2014</p>
+            <p class="mt-2 text-sm font-semibold text-zinc-500">MNT</p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-black text-zinc-950">Director — Strategic Projects, Organization & IT Governance</h3>
+            <p class="mt-4 leading-7 text-zinc-600">
+              Directed strategic and cross-functional projects, led Project Managers, established company-wide
+              project governance and methodology, managed project portfolio planning, supported executive
+              prioritization and led major transformation initiatives across information systems, BI and business processes.
+            </p>
+          </div>
+        </article>
+
+        <article class="reveal rounded-3xl border border-zinc-200 bg-white p-8 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8">
+          <div>
+            <p class="text-sm font-black text-zinc-500">1998 — 2007</p>
+            <p class="mt-2 text-sm font-semibold text-zinc-500">Orange / France Télécom ecosystem</p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-black text-zinc-950">IT Project, Domain & Business Transformation Leadership</h3>
+            <p class="mt-4 leading-7 text-zinc-600">
+              Led complex information-system delivery across requirements, architecture, RFPs, vendors,
+              project teams, quality, QA/UAT, pilot phases, deployment, application portfolios and business transformation.
+            </p>
+          </div>
+        </article>
+
+        <article class="reveal rounded-3xl border border-zinc-200 bg-white p-8 lg:grid lg:grid-cols-[220px_1fr] lg:gap-8">
+          <div>
+            <p class="text-sm font-black text-zinc-500">1997 — 1998</p>
+            <p class="mt-2 text-sm font-semibold text-zinc-500">Alcatel · Motorola France</p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-black text-zinc-950">Software Developer</h3>
+            <p class="mt-4 leading-7 text-zinc-600">
+              Early software engineering across GSM network equipment applications, corporate web development,
+              user interfaces, business logic and database design.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="tech-chip">C</span><span class="tech-chip">PowerBuilder</span>
+              <span class="tech-chip">Oracle</span><span class="tech-chip">SQL</span>
+              <span class="tech-chip">PL/SQL</span><span class="tech-chip">Paradox</span>
+              <span class="tech-chip">HTML</span><span class="tech-chip">GSM</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="bg-paper">
+      <div class="mx-auto grid max-w-7xl gap-6 px-6 py-24 lg:grid-cols-2 lg:px-8">
+        <div class="reveal rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
+          <p class="text-xs font-black uppercase tracking-[.2em] text-fuchsia-600">Education</p>
+          <h3 class="mt-6 text-2xl font-black text-zinc-950">EPF Engineering School</h3>
+          <p class="mt-2 font-semibold text-zinc-700">Engineering Degree (Diplôme d'Ingénieur)</p>
+          <p class="mt-1 text-sm text-zinc-500">Computer Science, Telecommunications & Networks · 1993–1998</p>
+
+          <div class="my-7 h-px bg-zinc-200"></div>
+
+          <h3 class="text-2xl font-black text-zinc-950">Technion</h3>
+          <p class="mt-2 font-semibold text-zinc-700">Cyber Technology</p>
+          <p class="mt-1 text-sm text-zinc-500">2016–2017</p>
+        </div>
+
+        <div class="reveal rounded-3xl bg-zinc-950 p-8 text-white shadow-soft">
+          <p class="text-xs font-black uppercase tracking-[.2em] text-fuchsia-400">Credentials & quality</p>
+          <div class="mt-6 space-y-6">
+            <div>
+              <h3 class="text-xl font-black">Lean Six Sigma Black Belt</h3>
+              <p class="mt-1 text-sm text-zinc-400">AFNOR · 2009</p>
+            </div>
+            <div class="h-px bg-white/10"></div>
+            <div>
+              <h3 class="text-xl font-black">CCNA</h3>
+              <p class="mt-1 text-sm text-zinc-400">Cisco networking certification</p>
+            </div>
+            <div class="h-px bg-white/10"></div>
+            <div>
+              <h3 class="text-xl font-black">Software Quality & Testing</h3>
+              <p class="mt-1 text-sm leading-6 text-zinc-400">
+                Testing, QA/UAT and automation practices integrated throughout the software delivery lifecycle.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+      <div class="reveal relative overflow-hidden rounded-[2.2rem] bg-zinc-950 px-7 py-14 text-center text-white shadow-glow sm:px-12 sm:py-20">
+        <div class="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-fuchsia-500/20 blur-[100px]"></div>
+        <div class="relative">
+          <p class="text-sm font-bold uppercase tracking-[.25em] text-fuchsia-400">Let's build</p>
+          <h2 class="mx-auto mt-5 max-w-3xl text-4xl font-black tracking-tight sm:text-5xl">
+            Full-stack engineering with a broader view of the product lifecycle.
+          </h2>
+          <p class="mx-auto mt-5 max-w-2xl leading-7 text-zinc-400">
+            Open to Full-Stack and AI-native engineering opportunities, including remote collaboration
+            with French and international teams.
+          </p>
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="mailto:karellealezra@gmail.com"
+               class="rounded-full bg-fuchsia-400 px-7 py-3.5 text-sm font-black text-zinc-950 transition hover:bg-fuchsia-300">
+              karellealezra@gmail.com
+            </a>
+            <a href="https://github.com/karellealezra" target="_blank" rel="noreferrer"
+               class="rounded-full border border-white/15 px-7 py-3.5 text-sm font-bold text-white transition hover:bg-white/10">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-zinc-950 text-white">
+    <div class="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-10 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <div class="flex items-center gap-5">
+        <img src="assets/img/ka-logo-footer.png" alt="KA Consulting" class="h-16 w-auto sm:h-20" />
+        <p class="text-xs leading-5 text-zinc-500">© <span id="year"></span> Karelle Alezra</p>
+      </div>
+      <div class="flex gap-5 text-xs text-zinc-400">
+        <a class="font-semibold transition hover:text-fuchsia-400" href="https://github.com/karellealezra" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="font-semibold transition hover:text-fuchsia-400" href="https://www.linkedin.com/in/karelle-alezra-6211a1254/" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </footer>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+    btn.addEventListener('click', () => {
+      const hidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!hidden));
+    });
 
+    menu.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => menu.classList.add('hidden'))
+    );
+
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      }),
+      { threshold: .10 }
+    );
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
-
 </html>
